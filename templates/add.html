@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Add a New Task</h2>
+        <div class="form-container">
+            <form method="POST" action="/add">
+                <label for="title">Task Title:</label>
+                <input type="text" id="title" name="title" required placeholder="Enter title">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required placeholder="Enter description"></textarea>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

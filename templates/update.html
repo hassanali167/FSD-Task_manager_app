@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Update Task</h2>
+
+        <div class="form-container">
+            <form method="GET" action="/update">
+                <label for="search_id">Enter Task ID to Edit:</label>
+                <input type="number" id="search_id" name="search_id" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        {% if message %}
+            <p class="error">{{ message }}</p>
+        {% endif %}
+
+        {% if task %}
+        <div class="form-container">
+            <h3>Editing: {{ task.title }}</h3>
+            <form method="POST" action="/update">
+                <input type="hidden" name="task_id" value="{{ task.task_id }}">
+                
+                <label for="description">New Description:</label>
+                <textarea id="description" name="description" required>{{ task.description }}</textarea>
+                
+                <label>
+                    <input type="checkbox" name="completed" {% if task.status == 'Completed' %}checked{% endif %}>
+                    Mark as Completed
+                </label>
+                
+                <button type="submit">Update Task</button>
+            </form>
+        </div>
+        {% endif %}
+
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

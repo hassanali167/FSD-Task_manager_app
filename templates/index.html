@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Task Manager Application</h1>
+</header>
+
+<div class="container">
+    <h2>Welcome</h2>
+
+    <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 25px;">
+        Manage your tasks easily — Add, View, Update, or Delete tasks.
+    </p>
+
+    <div class="nav-grid">
+        <a class="nav-card" href="/add">
+            <div class="nav-icon"></div>
+            Add New Task
+        </a>
+
+        <a class="nav-card" href="/tasks">
+            <div class="nav-icon"></div>
+            View All Tasks
+        </a>
+
+        <a class="nav-card" href="/update">
+            <div class="nav-icon"></div>
+            Update a Task
+        </a>
+
+        <a class="nav-card" href="/delete">
+            <div class="nav-icon"></div>
+            Delete a Task
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

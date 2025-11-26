@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Delete a Task</h2>
+        
+        <div class="form-container">
+            <form method="POST" action="/delete">
+                <label for="task_id">Enter Task ID to Delete:</label>
+                <input type="number" id="task_id" name="task_id" required>
+                <button type="submit" style="background-color: #dc3545;">Delete Task</button>
+            </form>
+            
+            {% if message %}
+                <p class="error">{{ message }}</p>
+            {% endif %}
+        </div>
+
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

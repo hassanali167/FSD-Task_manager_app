@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Tasks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Task List</h2>
+        
+        <div class="filter-links">
+            Filter: 
+            <a href="/tasks">All</a> | 
+            <a href="/tasks?filter=Pending">Pending</a> | 
+            <a href="/tasks?filter=Completed">Completed</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr>
+                    <td>{{ task.task_id }}</td>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.status }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4">No tasks found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>
