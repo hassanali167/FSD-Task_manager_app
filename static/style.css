@@ -1,0 +1,301 @@
+/* ===========================
+   Global Theme Variables
+=========================== */
+:root {
+    --primary-color: #6366f1; /* Bright Indigo */
+    --primary-hover: #4f46e5;
+    --bg-gradient: linear-gradient(135deg, #eef2ff, #f8fafc);
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --glass-bg: rgba(255, 255, 255, 0.55);
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --danger-color: #ef4444;
+    --success-color: #10b981;
+    --border-radius: 16px;
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.10);
+    --backdrop: blur(14px);
+}
+
+/* ===========================
+   Body
+=========================== */
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===========================
+   Header
+=========================== */
+header {
+    width: 100%;
+    padding: 2rem 0;
+    text-align: center;
+    background: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2.5rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ===========================
+   Main Container
+=========================== */
+.container {
+    width: 90%;
+    max-width: 950px;
+    background: var(--glass-bg);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: var(--backdrop);
+}
+
+/* Titles */
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    display: block;
+    margin-top: 8px;
+    border-radius: 10px;
+}
+
+/* ===========================
+   Navigation Cards
+=========================== */
+.nav-grid {
+    display: grid;
+    gap: 25px;
+    margin-top: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.nav-card {
+    background: var(--glass-bg);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    transition: all 0.35s ease;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: var(--backdrop);
+}
+
+.nav-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.nav-icon {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+/* ===========================
+   Form Styling
+=========================== */
+.form-container {
+    max-width: 550px;
+    margin: auto;
+}
+
+label {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-top: 18px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+    outline: none;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+.btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 25px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+/* ===========================
+   Tables
+=========================== */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: var(--glass-bg);
+    border-radius: 14px;
+    overflow: hidden;
+    backdrop-filter: var(--backdrop);
+}
+
+th {
+    background: rgba(99, 102, 241, 0.1);
+    padding: 14px;
+    font-weight: 700;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* ===========================
+   Status Badges
+=========================== */
+.status-badge {
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.status-pending {
+    background: #fff7cd;
+    color: #b45309;
+}
+
+.status-completed {
+    background: #d1fae5;
+    color: #059669;
+}
+
+/* ===========================
+   Filter Bar
+=========================== */
+.filter-bar {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 12px 20px;
+    border-radius: 10px;
+    display: inline-flex;
+    gap: 10px;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: var(--backdrop);
+}
+
+.filter-link {
+    color: var(--text-muted);
+    padding: 6px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.filter-link:hover,
+.filter-link.active {
+    background: white;
+    color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ===========================
+   Misc Utilities
+=========================== */
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+.error {
+    background: #fee2e2;
+    padding: 12px;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    color: #b91c1c;
+    box-shadow: var(--shadow-sm);
+}
